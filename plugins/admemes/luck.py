@@ -11,7 +11,7 @@ TRY_YOUR_LUCK = "🎰"
 # EMOJI CONSTANTS
 
 @Client.on_message(
-    filters.command(["luck", "cownd"])
+    filters.command(["luck"])
 )
 async def luck_cownd(client, message):
     """ /luck an @animatedluck """
