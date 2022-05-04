@@ -6,7 +6,7 @@ from pyrogram import filters
 from tswift import Song
 
 
-@pbot.on_message(filters.command(["lyric", "lyrics"]))
+@pbot.on_message(filters.command(["lyrics"]))
 async def _(client, message):
     lel = await message.reply("Searching For Lyrics.....")
     query = message.text
