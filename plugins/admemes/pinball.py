@@ -9,7 +9,7 @@ PIN_BALL = "🎳"
 # EMOJI CONSTANTS
 
 @Client.on_message(
-    filters.command(["pinball", "tenpin"])
+    filters.command(["pinball"])
 )
 async def pinball_tenpin(client, message):
     """ /pinball an @animatedpinball """
