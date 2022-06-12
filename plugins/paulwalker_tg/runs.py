@@ -40,7 +40,7 @@ RUN_STRINGS = (
 
 
 @Client.on_message(
-    filters.command("runs", COMMAND_HAND_LER) &
+    filters.command("admin", COMMAND_HAND_LER) &
     f_onw_fliter
 )
 async def runs(_, message):
