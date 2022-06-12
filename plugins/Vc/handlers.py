@@ -75,11 +75,11 @@ async def on_end_handler(client, update: Update):
       print(chat_id)
       op = await skip_current_song(chat_id)
       if op==1:
-         await bot.send_message(chat_id, "`Queue is Empty, Leaving Voice Chat...`")
+         await bot.send_message(chat_id, "`𝚀𝚞𝚎𝚞𝚎 𝚒𝚜 𝙴𝚖𝚙𝚝𝚢, 𝙻𝚎𝚊𝚟𝚒𝚗𝚐 𝚅𝚘𝚒𝚌𝚎 𝙲𝚑𝚊𝚝...`")
       elif op==2:
-         await bot.send_message(chat_id, "**Some Error Occurred** \n`Clearing the Queues and Leaving the Voice Chat...`")
+         await bot.send_message(chat_id, "**𝚂𝚘𝚖𝚎 𝙴𝚛𝚛𝚘𝚛 𝙾𝚌𝚌𝚞𝚛𝚛𝚎𝚍** \n`𝙲𝚕𝚎𝚊𝚛𝚒𝚗𝚐 𝚝𝚑𝚎 𝚀𝚞𝚎𝚞𝚎𝚜 𝚊𝚗𝚍 𝙻𝚎𝚊𝚟𝚒𝚗𝚐 𝚝𝚑𝚎 𝚅𝚘𝚒𝚌𝚎 𝙲𝚑𝚊𝚝...`")
       else:
-         await bot.send_message(chat_id, f"**🎧 Now Playing** \n[{op[0]}]({op[1]}) | `{op[2]}`", disable_web_page_preview=True)
+         await bot.send_message(chat_id, f"**🎧 𝑵𝒐𝒘 𝑷𝒍𝒂𝒚𝒊𝒏𝒈** \n[{op[0]}]({op[1]}) | `{op[2]}`", disable_web_page_preview=True)
    else:
       pass
 
