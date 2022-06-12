@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
 from telegraph import upload_file
 
-@Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
+@Client.on_message(filters.command(["telegraph"]))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
@@ -43,10 +43,10 @@ async def telegraph(client, message):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="open link", url=f"https://telegra.ph{response[0]}"),
-                    InlineKeyboardButton(text="share link", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
+                    InlineKeyboardButton(text="ᴏᴘᴇɴ 🔓", url=f"https://telegra.ph{response[0]}"),
+                    InlineKeyboardButton(text="🔺 sʜᴀʀᴇ 🔺", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
                 ],
-                [InlineKeyboardButton(text="✗ Close ✗", callback_data="close_data")]
+                [InlineKeyboardButton(text="✗ ᴄʟᴏsᴇ ✗", callback_data="close_data")]
             ]
         )
     )
