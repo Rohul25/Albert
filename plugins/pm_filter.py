@@ -487,32 +487,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('ᴀᴅᴍɪɴ', callback_data='admin')
-            ],[
             InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛ', callback_data='coct'),
             InlineKeyboardButton('ғɪʟᴛᴇʀs', callback_data='auto_manual'),
-            InlineKeyboardButton('ᴛʀᴀɴs', callback_data='gtrans')
             ],[
+            InlineKeyboardButton('ᴛʀᴀɴs', callback_data='gtrans')
             InlineKeyboardButton('ɪɴғᴏ', callback_data='info'),
             InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='paste')
             ],[
             InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purge')
-            ],[
             InlineKeyboardButton('ʀᴇsᴛʀɪᴄᴛ', callback_data='restric'),
             InlineKeyboardButton('sᴇᴀʀᴄʜ', callback_data='search'),
-            InlineKeyboardButton('ᴛɢʀᴀᴘʜ', callback_data='tgraph')
             ],[
-            InlineKeyboardButton('ɪɴғᴏ', callback_data='whois'),
-            InlineKeyboardButton('ғᴜɴ', callback_data='fun')
-            ],[
-            InlineKeyboardButton('ᴄʜᴇᴄᴋ', callback_data='alive')
-            ],[
-            InlineKeyboardButton('sᴏɴɢ', callback_data='song'),
-            InlineKeyboardButton('Jsᴏɴ', callback_data='json'),
-            InlineKeyboardButton('ᴘɪɴ', callback_data='pin')
-            ],[
-            InlineKeyboardButton('sᴛɪᴄᴋᴇʀ', callback_data='stickerid')
-            ],[
-            InlineKeyboardButton('« ʙᴀᴄᴋ', callback_data='start')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
+            InlineKeyboardButton('ɴᴇxᴛ', callback_data='next')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await query.message.reply_text("■□□□□")
@@ -548,6 +535,34 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "next":
+        buttons = [[
+            InlineKeyboardButton('ᴛɢʀᴀᴘʜ', callback_data='tgraph')
+            InlineKeyboardButton('ɪɴғᴏ', callback_data='whois'),
+            InlineKeyboardButton('ғᴜɴ', callback_data='fun')
+            ],[
+            InlineKeyboardButton('ᴄʜᴇᴄᴋ', callback_data='alive')
+            InlineKeyboardButton('sᴏɴɢ', callback_data='song'),
+            InlineKeyboardButton('Jsᴏɴ', callback_data='json'),
+            ],[
+            InlineKeyboardButton('ᴘɪɴ', callback_data='pin')
+            InlineKeyboardButton('sᴛɪᴄᴋᴇʀ', callback_data='stickerid')
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ'), callback_data='about')
+            ],[
+            InlineKeyboardButton('ʙᴀᴄᴋ'), callback_data='help')
+        ]] 
+        reply_markup = InlineKeyboardMarkup(buttons)
+        m=await query.message.reply_text("■□□ ʟᴏᴀᴅɪɴɢ")
+        n=await m.edit("■■□")
+        o=await n.edit("■■■ ʟᴏᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ.")
+        await asyncio.sleep(1)
+        await o.delete()
+        await query.message.edit_text(
+            text=script.NEXT_TXT,
+            reply_markup=reply_markup,
+
+parse_mode='html'
+        )
     elif query.data == "alive":
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
@@ -564,21 +579,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
 parse_mode='html'
         )
-    elif query.data == "whois":
-        buttons = [[
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("■□□ ʟᴏᴀᴅɪɴɢ")
-        n=await m.edit("■■□")
-        o=await n.edit("■■■ ʟᴏᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ.")
-        await asyncio.sleep(1)
-        await o.delete()
-        await query.message.edit_text(
-            text=script.WHOIS_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
     elif query.data == "source":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='about')
@@ -592,21 +592,6 @@ parse_mode='html'
         await query.message.edit_text(
             text=script.SOURCE_TXT,
             disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "corona":
-        buttons = [[
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("▣▢▢")
-        n=await m.edit("▣▣▢")
-        o=await n.edit("▣▣▣")
-        await asyncio.sleep(1)
-        await o.delete()
-        await query.message.edit_text(
-            text=script.CORONA_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
