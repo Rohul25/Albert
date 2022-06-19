@@ -187,7 +187,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('Use /search' Movie name'.\n Or Search Here [ {search} ](https://www.google.com/search?q={search}+Movie&oq=search}+Movie+&aqs=chrome')
+            k = await query.message.edit('Use /search' Movie name'.\n Or Search Here [ {search} ](https://www.google.com/search?q={search}+Movie&oq={search}+Movie+&aqs=chrome')
             await asyncio.sleep(10)
             await k.delete()
 
